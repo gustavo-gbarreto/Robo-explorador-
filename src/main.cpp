@@ -7,14 +7,14 @@
 #include "time.h"
 
 // --- CONFIGURAÇÕES DE REDE E MQTT ---
-const char* ssid = "Gustavo"; // Ou o nome da sua rede Wi-Fi
-const char* password = "mqtteste";       // Senha da sua rede
+const char* ssid = "Gustavo"; 
+const char* password = "mqtteste";       
 const char* mqtt_server = "broker.hivemq.com";
 const int mqtt_port = 1883;
 const char* mqtt_topic_command = "senai/cimatec/robo/comandos/gradin";
 
 // --- CONFIGURAÇÕES DO CALLMEBOT ---
-String phoneNumber = "557199687174"; // Ex: 55719...
+String phoneNumber = "557199687174"; 
 String apiKey = "3813015";
 
 // --- MAPEAMENTO DE PINOS ---
@@ -30,7 +30,7 @@ const int motor_IN3= 4;  // controle do motor direito
 const int motor_IN4= 0;  // controle do motor direito
 
 
-// --- OBJETOS E VARIÁVEIS GLOBAIS ---
+
 WiFiClient espClient;
 PubSubClient client(espClient);
 DHT dht(DHTpin, DHTTYPE);
@@ -39,7 +39,7 @@ DHT dht(DHTpin, DHTTYPE);
 const char* api_url = "http://10.183.253.145:5000/leituras";
 
 
-// --- CONFIGURAÇÃO DE HORÁRIO (NOVO) ---
+// --- CONFIGURAÇÃO DE HORÁRIO ---
 const char* ntpServer = "pool.ntp.org";
 const long  gmtOffset_sec = -3 * 3600; // Fuso Horário Brasil (GMT-3)
 const int   daylightOffset_sec = 0;
@@ -47,7 +47,7 @@ const int   daylightOffset_sec = 0;
 bool systemEnabled = true; // Robô começa ligado
 unsigned long lastMsg = 0; // Para o timer do loop principal
 
-// Protótipos das funções
+
 void callback(char* topic, byte* payload, unsigned int length);
 void controlMotors(String command);
 void sendWhatsAppAlert();
@@ -75,7 +75,6 @@ void reconnect() {
     Serial.print("Tentando conectar ao MQTT...");
     if (client.connect("ESP32_Robo_Explorador")) {
       Serial.println("conectado!");
-      // Se inscreve no tópico para receber comandos do controle remoto
       client.subscribe(mqtt_topic_command);
     } else {
       Serial.print("falhou, rc=");
@@ -86,7 +85,6 @@ void reconnect() {
   }
 }
 
-// --- FUNÇÃO DE CALLBACK: RECEBE OS COMANDOS DO CONTROLE REMOTO ---
 void callback(char* topic, byte* payload, unsigned int length) {
   String command;
   for (int i = 0; i < length; i++) {
@@ -97,7 +95,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
 
   if (command == "DESLIGAR") {
     systemEnabled = false;
-    controlMotors("STOP"); // Para os motores imediatamente
+    controlMotors("STOP"); 
   } else {
     // Qualquer outro comando de movimento liga o sistema
     systemEnabled = true;
@@ -105,7 +103,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
   }
 }
 
-// --- CONTROLE DOS MOTORES ---
+
 void controlMotors(String command) {
     
         digitalWrite(motor_IN1, LOW);
@@ -143,7 +141,7 @@ void controlMotors(String command) {
     }
 }
 
-// --- FUNÇÃO PARA ENVIAR ALERTA NO WHATSAPP ---
+// --- FUNÇÃO PARA ALERTA NO WHATSAPP ---
 void sendWhatsAppAlert() {
   String message = "Alerta! Alta probabilidade de vida detectada no planeta.";
   String url = "https://api.callmebot.com/whatsapp.php?phone=" + phoneNumber + "&apikey=" + apiKey + "&text=" + urlEncode(message);
@@ -162,12 +160,12 @@ void sendWhatsAppAlert() {
   http.end();
 }
 
-// --- FUNÇÃO PARA OBTER TIMESTAMP (NOVO) ---
+// --- FUNÇÃO PARA OBTER TIMESTAMP ---
 String obterTimestamp() {
   struct tm timeinfo;
   if (!getLocalTime(&timeinfo)) {
     Serial.println("Falha ao obter a hora do servidor NTP");
-    return "2025-01-01T00:00:00Z"; // Retorna um valor padrão em caso de falha
+    return "2025-01-01T00:00:00Z"; 
   }
   char timeStringBuff[32];
   strftime(timeStringBuff, sizeof(timeStringBuff), "%Y-%m-%dT%H:%M:%SZ", &timeinfo);
@@ -200,7 +198,7 @@ void enviarDadosParaAPI(float temp, float umid, int lum, bool pres, int prob) {
 
   int httpCode = http.POST(jsonPayload);
 
-  if (httpCode == 201) { // 201 Created (sucesso, conforme seu código Flask)
+  if (httpCode == 201) { 
     Serial.println("API: Dados enviados com sucesso.");
   } else {
     Serial.printf("API: POST falhou, código: %d - %s\n", httpCode, http.errorToString(httpCode).c_str());
@@ -224,9 +222,6 @@ void setup() {
   // Inicializa o sensor DHT
   dht.begin();
   
-  // Anexa os servos aos pinos
-  // servoL.attach(servoLPin);
-  // servoR.attach(servoRPin);
   controlMotors("STOP"); // Garante que os motores comecem parados
 
   setup_wifi();
@@ -238,9 +233,8 @@ void loop() {
   if (!client.connected()) {
     reconnect();
   }
-  client.loop(); // Essencial para o MQTT funcionar
+  client.loop(); 
 
-  // Lógica principal que roda a cada 2 segundos (2000 ms)
   unsigned long now = millis();
   if (now - lastMsg > 2000) {
     lastMsg = now;
@@ -248,8 +242,8 @@ void loop() {
     // --- LEITURA DOS SENSORES ---
     float humidity = dht.readHumidity();
     float temperature = dht.readTemperature();
-    int lightValue = analogRead(LDRpin); // Leitura do LDR
-    bool presenceState = digitalRead(pirPin); // Leitura do PIR
+    int lightValue = analogRead(LDRpin); 
+    bool presenceState = digitalRead(pirPin); 
 
     int probability = 0;
 
@@ -261,7 +255,6 @@ void loop() {
       if (humidity >= 40 && humidity <= 95) {
         probability += 25;
       }
-      // O valor de "luz adequada" é um limiar. Ex: > 2000. Ajuste conforme seu sensor e ambiente.
       if (lightValue > 2000) { 
         probability += 20;
       }
@@ -286,7 +279,7 @@ void loop() {
       digitalWrite(ledGreenPin, LOW);
       digitalWrite(ledRedPin, HIGH);
       Serial.println("Estado do Robô: ALERTA! Alta probabilidade de vida detectada!");
-      sendWhatsAppAlert(); // Envia a mensagem
+      sendWhatsAppAlert(); 
     } else {
       digitalWrite(ledGreenPin, HIGH);
       digitalWrite(ledRedPin, LOW);
