@@ -17,7 +17,6 @@ Este repositório contém o projeto de um Robô Explorador que calcula a probabi
 
 ## 📍 Sobre o Projeto
 
-[**Aqui você detalha o projeto.** Por exemplo: "O Robô Explorador foi desenvolvido como um projeto de [estudo/TCC/hobby] com o objetivo de criar um veículo terrestre não tripulado (UGV) de baixo custo. Ele utiliza [Ex: um sensor ultrassônico] para detectar obstáculos à sua frente e [Ex: uma lógica de decisão simples] para alterar sua rota e continuar a exploração."]
 
 O projeto do robô foi desenvolvido sob a orientaçâo do professor Wild Freitas como um projeto para a matéria de Pràticas integradas: IOT. Seu desenvolvimento foi feito em duas etapas: a etapa 4 do mòdulo da camada de redes e a etapa 1 do mòdulo da camada de serviço.
 Na camada de redes, o projeto o projeto tinha como foco o monitoramento das variàveis do ambiente, usando um LDR para medir luminosidade, um DHT para medir temperatura e umidade e um PIR para detectar presença. Em conjunto, esses 3 sensores determinavam a probabilidade de existência de vida no planeta hipotètico. Além do cálculo de probabilidade de vida, tambèm foi implementado o controle remoto usando MQTT e o uso de uma API para envio de mensagem via whatsapp caso houvesse altas chances de existência de vida.
@@ -25,18 +24,15 @@ Na camada de serviço, foi incluido o armazenamento dos dados lidos pelo robô e
 
 <img width="360" height="360" alt="image" src="https://github.com/user-attachments/assets/61e0f7eb-2d99-407b-8814-3cb5da0578e4" />
 
-*(Opcional: Adicione um GIF ou imagem do robô em ação!)*
-`![GIF do Robô](link-para-seu-gif.gif)`
-
 ---
 
 ## ✨ Funcionalidades Principais
 
-- [ ] Navegação autônoma em ambiente com obstáculos.
-- [ ] Detecção de obstáculos em tempo real.
-- [ ] Controle de motores DC (movimento para frente, ré, curvas).
-- [ ] [Adicione outra funcionalidade, ex: Controle via App Bluetooth]
-- [ ] [Adicione outra funcionalidade, ex: Mapeamento simples do ambiente]
+- [ ] Mediçâo de temperatura, umidade e luminosidade.
+- [ ] Detecção de presença em tempo real.
+- [ ] Controle de motores DC de forma remota (movimento para frente, ré, curvas).
+- [ ] Envio de mensagem de alerta via Whatsapp.
+- [ ] Armazenamento das leituras em um banco de dados
 
 ---
 
@@ -45,12 +41,11 @@ Na camada de serviço, foi incluido o armazenamento dos dados lidos pelo robô e
 Liste os principais componentes de hardware e software utilizados:
 
 ### Hardware
-* **Microcontrolador:** [Ex: Arduino UNO R3 / ESP32 / Raspberry Pi Pico]
-* **Chassi:** [Ex: Chassi 2WD (duas rodas)]
-* **Sensores:** [Ex: Sensor Ultrassônico HC-SR04 / Sensores Infravermelhos]
-* **Atuadores:** [Ex: 2x Motores DC com caixa de redução]
-* **Driver de Motor:** [Ex: Ponte H L298N ou L293D]
-* **Alimentação:** [Ex: Bateria 9V / Power bank / Pack de pilhas AA]
+* **Microcontrolador:** ESP32 
+* **Sensores:** Fotoresistor LDR / Sensor PIR/ DHT11 
+* **Atuadores:** 2x Motor DC 
+* **Driver de Motor:** [Ponte H L298N]
+* **Alimentação:** [Bateria 9V ou fonte de bancada]
 
 ### Software
 * **Linguagem:** [Ex: C++ (Arduino) / MicroPython / Python]
