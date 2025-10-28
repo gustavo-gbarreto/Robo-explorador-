@@ -42,7 +42,7 @@ Liste os principais componentes de hardware e software utilizados:
 
 ### Hardware
 * **Microcontrolador:** ESP32 
-* **Sensores:**
+* **Sensores:**  
   [Fotoresistor LDR]  
   [Sensor PIR]  
   [DHT11]  
