@@ -1,7 +1,7 @@
 # 🤖 Robô Explorador
 
 ![Status do Projeto](https://img.shields.io/badge/status-em_desenvolvimento-blueviolet)
-Este repositório contém o projeto de um Robô Explorador que calcula a probabilidade de existência de vida com base nas seguintes variáveis ambientais: luminosidade, umidade, temperatura e utiliza um sensor PIR para verificar a presença. O robô é controlado atravès de um outro circuito simulado remotamente e os comandos sâo enviados via MQTT e sua conexâo é feita através de uma rede WI-Fi
+Este repositório contém o projeto de um Robô Explorador que calcula a probabilidade de existência de vida com base na luminosidade, umidade e temperatura em conjunto com um sensor PIR para verificar a presença. O robô é controlado atravès de um outro circuito simulado remotamente e os comandos sâo enviados via MQTT e sua conexâo é feita através de uma rede WI-Fi
 ---
 
 ## 📖 Índice
