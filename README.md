@@ -64,18 +64,42 @@ Liste os principais componentes de hardware e software utilizados:
 
 Instruções para configurar o projeto para desenvolvimento ou upload.
 
-1.  Faça o download e instale o VSCode(https://code.visualstudio.com/Download)).  
+1.  Faça o download e instale o VSCode (https://code.visualstudio.com/Download)).  
 2.  Clone este repositório:  
-    ```bash
+   ```bash
     git clone [https://github.com/gustavo-gbarreto/Robo-explorador-.git]
-    ```
+   ```
 3.  Abra o arquivo principal `main.cpp` no VSCode usando o PlatformIO.  
 4.  Instale as bibliotecas necessárias:
-5.  Altere as credenciais do Wifi para a sua rede:
-   ''' C++
-    const char* ssid = "rede_exemplo"; // Ou o nome da sua rede Wi-Fi
-    const char* password = "12345678";       // Senha da sua rede
-  ´´´ 
+
+## ⚙️ Configurando as conexões 
+
+1.  Altere as credenciais do Wifi para a sua rede:  
+   ``` C++
+    const char* ssid = "rede_exemplo"; // nome da sua rede Wi-Fi
+    const char* password = "12345678"; // Senha da sua rede
+  ```
+2. Configure seu broker mqtt e a porta usada:
+  ``` C++
+    const char* mqtt_server = "broker.hivemq.com"; 
+    const int mqtt_port = 1883;
+  ```
+3. Configure o tòpico mqtt a ser utilizado:
+  ```C++
+    const char* mqtt_topic_command = "senai/cimatec/robo/comandos/gradin"; 
+  ```
+4. Configure o CallmeBot
+  ```C++
+   String phoneNumber = "5571999992222"; // insira o telefone que irà receber as mensagens via Whatsapp
+   String apiKey = "3813015"; // Para saber qual sua key da API, seguir o passo a passo em: https://www.callmebot.com/blog/free-api-whatsapp-messages/
+  ```
+5. Substitua o IP da API para o IP da sua máquina.  
+   - Pressione Win + R e digite cmd.  
+   - use o comando ipconfig, copie o endereço IPV4 da sua máquina e substitua na seguinte linha
+     ```C++
+     const char* api_url = "http://10.183.253.145:5000/leituras";
+     ```
+     
 ---
 
 ## ▶️ Como Usar
