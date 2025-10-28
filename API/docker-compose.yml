@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  # 1. Definição do serviço da sua API
+  api:
+    build: . # Constrói a imagem usando o Dockerfile na pasta atual
+    container_name: robo_explorador_api
+    ports:
+      - "5000:5000" # Expõe a porta 5000 do contêiner para a porta 5000 da sua máquina
+    environment:
+      - MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/<database>?retryWrites=true&w=majority
+    depends_on:
+      - mongo
+
+  # 2. Serviço opcional para MongoDB local (caso precise para testes)
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - robo_network
+
+networks:
+  robo_network:
+    driver: bridge
