@@ -43,14 +43,14 @@ Liste os principais componentes de hardware e software utilizados:
 ### Hardware
 * **Microcontrolador:** ESP32 
 * **Sensores:**  
-  [Fotoresistor LDR]  
-  [Sensor PIR]  
-  [DHT11]  
+  -Fotoresistor LDR  
+  -Sensor PIR  
+  -DHT11 
 * **Atuadores:** 2x Motor DC 3-6V com Caixa de Redução e Eixo Duplo 
 * **Driver de Motor:** Ponte H L298N
-* **Sinalizadores:**
-  -1x LED PTH Vermelho
-  -1x LED PTH Verde 
+* **Sinalizadores:**  
+  -1x LED PTH Vermelho  
+  -1x LED PTH Verde  
 * **Alimentação:** Bateria 9V ou fonte de bancada
 
 ### Software
@@ -64,45 +64,27 @@ Liste os principais componentes de hardware e software utilizados:
 
 Instruções para configurar o projeto para desenvolvimento ou upload.
 
-[**Exemplo para projeto Arduino:**]
-1.  Faça o download e instale a [Arduino IDE](https://www.arduino.cc/en/software).
-2.  Clone este repositório:
+1.  Faça o download e instale o VSCode(https://code.visualstudio.com/Download)).  
+2.  Clone este repositório:  
     ```bash
     git clone [https://github.com/gustavo-gbarreto/Robo-explorador-.git](https://github.com/gustavo-gbarreto/Robo-explorador-.git)
     ```
-3.  Abra o arquivo principal `.ino` na Arduino IDE.
-4.  Instale as bibliotecas necessárias através do "Library Manager":
-    * `[Nome da Biblioteca 1 (ex: NewPing)]`
-    * `[Nome da Biblioteca 2 (ex: AFMotor)]`
+3.  Abra o arquivo principal `main.cpp` no VSCode usando o PlatformIO.  
+4.  Instale as bibliotecas necessárias:  
+ 
 
-[**Exemplo para projeto Python (Simulação/Raspberry Pi):**]
-1.  Clone o repositório:
-    ```bash
-    git clone [https://github.com/gustavo-gbarreto/Robo-explorador-.git](https://github.com/gustavo-gbarreto/Robo-explorador-.git)
-    cd Robo-explorador-
-    ```
-2.  (Opcional) Crie e ative um ambiente virtual:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # No Windows: venv\Scripts\activate
-    ```
-3.  Instale as dependências:
-    ```bash
-    pip install -r requirements.txt
-    ```
 
 ---
 
 ## ▶️ Como Usar
 
 [**Exemplo para projeto Arduino:**]
-1.  Conecte o microcontrolador (Arduino) ao seu computador via USB.
-2.  Na Arduino IDE, vá em **Tools > Board** e selecione o modelo da sua placa (ex: "Arduino Uno").
+1.  Conecte o microcontrolador (ESP32) ao seu computador via USB.  
+2.  Configure a placa no seu projeto
 3.  Vá em **Tools > Port** e selecione a porta COM correspondente.
 4.  Clique no botão **Upload** (seta para a direita) para compilar e enviar o código para o robô.
-5.  Desconecte o USB e ligue a alimentação externa do robô.
 
 [**Exemplo para projeto Python (Simulação):**]
 Execute o script principal para iniciar a simulação:
 ```bash
-python main.py
+python api_robo.py
