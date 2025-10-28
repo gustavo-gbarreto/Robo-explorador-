@@ -8,9 +8,9 @@ Este repositório contém o projeto de um Robô Explorador que calcula a probabi
 
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades Principais](#-funcionalidades-principais)
-- [Tecnologias e Componentes](-tecnologias-e-componentes) 
-- [Configuração do Ambiente](-configuração-do-ambiente)
-- [Como Usar](-como-usar)
+- [Tecnologias e Componentes](https://github.com/gustavo-gbarreto/Robo-explorador-/tree/main?tab=readme-ov-file#%EF%B8%8F-tecnologias-e-componentes)  
+- [Configuração do Ambiente](https://github.com/gustavo-gbarreto/Robo-explorador-/tree/main?tab=readme-ov-file#%EF%B8%8F-configura%C3%A7%C3%A3o-do-ambiente)
+- [Como Usar](https://github.com/gustavo-gbarreto/Robo-explorador-/tree/main?tab=readme-ov-file#%EF%B8%8F-como-usar)
 - [Autor](#-autor)
 - 
 
@@ -52,6 +52,10 @@ Na camada de serviço, foi incluido o armazenamento dos dados lidos pelo robô e
   -1x LED PTH Vermelho  
   -1x LED PTH Verde  
 * **Alimentação:** Bateria 9V ou fonte de bancada
+* Circuito
+  <img width="806" height="339" alt="image" src="https://github.com/user-attachments/assets/9898fcb4-e59a-4b0a-a682-0c7585292790" />
+  **Obs:** O circuito representado na imagem está incompleto, o Wokwi não possui os componentes motor DC e ponte H L298N 
+
 
 ### Software
 * **Linguagem:** C++ (Arduino) e Python
@@ -116,6 +120,13 @@ Instruções para configurar o projeto para desenvolvimento ou upload.
 ```bash
 python api_robo.py
 ```
+
+## Autores
+
+-[Gustavo Barreto](https://github.com/gustavo-gbarreto) - gustavo.barreto@ba.estudante.senai.br  
+-[Guilherme Gradin](link do github) - email  
+-[Juan Victor](link do github) - email  
+-[Uriel Henrique Oliveira](https://github.com/UrielHRO) -email  
 
 
 
