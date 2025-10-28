@@ -10,17 +10,18 @@ Este repositório contém o projeto de um Robô Explorador que calcula a probabi
 - [Funcionalidades Principais](#-funcionalidades-principais)
 - [Tecnologias e Componentes](https://github.com/gustavo-gbarreto/Robo-explorador-/tree/main?tab=readme-ov-file#%EF%B8%8F-tecnologias-e-componentes)  
 - [Configuração do Ambiente](https://github.com/gustavo-gbarreto/Robo-explorador-/tree/main?tab=readme-ov-file#%EF%B8%8F-configura%C3%A7%C3%A3o-do-ambiente)
+- [Configurando as conexões externas](https://github.com/gustavo-gbarreto/Robo-explorador-/tree/main?tab=readme-ov-file#%EF%B8%8F-configurando-as-conex%C3%B5es)
 - [Como Usar](https://github.com/gustavo-gbarreto/Robo-explorador-/tree/main?tab=readme-ov-file#%EF%B8%8F-como-usar)
-- [Autor](#-autor)
-- 
+- [Autores](https://github.com/gustavo-gbarreto/Robo-explorador-/tree/main?tab=readme-ov-file#autores)
+  
 
 ---
 
 ## 📍 Sobre o Projeto
 
 
-O projeto do robô foi desenvolvido sob a orientaçâo do professor Wild Freitas como um projeto para a matéria de Pràticas integradas: IOT. Seu desenvolvimento foi feito em duas etapas: a etapa 4 do mòdulo da camada de redes e a etapa 1 do mòdulo da camada de serviço.
-Na camada de redes, o projeto o projeto tinha como foco o monitoramento das variàveis do ambiente, usando um LDR para medir luminosidade, um DHT para medir temperatura e umidade e um PIR para detectar presença. Em conjunto, esses 3 sensores determinavam a probabilidade de existência de vida no planeta hipotètico. Além do cálculo de probabilidade de vida, tambèm foi implementado o controle remoto usando MQTT e o uso de uma API para envio de mensagem via whatsapp caso houvesse altas chances de existência de vida.
+O projeto do robô foi desenvolvido sob a orientaçâo do professor Wild Freitas como um projeto para a matéria de Pràticas integradas: IOT. Seu desenvolvimento foi feito em duas etapas: a etapa 4 do mòdulo da camada de redes e a etapa 1 do mòdulo da camada de serviço.  
+Na camada de redes, o projeto o projeto tinha como foco o monitoramento das variàveis do ambiente, usando um LDR para medir luminosidade, um DHT para medir temperatura e umidade e um PIR para detectar presença. Em conjunto, esses 3 sensores determinavam a probabilidade de existência de vida no planeta hipotètico. Além do cálculo de probabilidade de vida, tambèm foi implementado o controle remoto usando MQTT e o uso de uma API para envio de mensagem via whatsapp caso houvesse altas chances de existência de vida.  
 Na camada de serviço, foi incluido o armazenamento dos dados lidos pelo robô em um banco de dados, o MongoDB, foi desenvolvida uma API em python para integrar a programaçâo do microcontrolador ao banco de dados e registrar as leituras com a data e horàrio em que ela foi obtida
 
 <img width="360" height="360" alt="image" src="https://github.com/user-attachments/assets/61e0f7eb-2d99-407b-8814-3cb5da0578e4" />
@@ -52,7 +53,7 @@ Na camada de serviço, foi incluido o armazenamento dos dados lidos pelo robô e
   -1x LED PTH Vermelho  
   -1x LED PTH Verde  
 * **Alimentação:** Bateria 9V ou fonte de bancada
-* Circuito
+* **Circuito**  
   <img width="806" height="339" alt="image" src="https://github.com/user-attachments/assets/9898fcb4-e59a-4b0a-a682-0c7585292790" />
   **Obs:** O circuito representado na imagem está incompleto, o Wokwi não possui os componentes motor DC e ponte H L298N 
 
@@ -100,9 +101,9 @@ Instruções para configurar o projeto para desenvolvimento ou upload.
 5. Substitua o IP da API para o IP da sua máquina.  
    - Pressione Win + R e digite cmd.  
    - use o comando ipconfig, copie o endereço IPV4 da sua máquina e substitua na seguinte linha
-     ```C++
-     const char* api_url = "http://10.183.253.145:5000/leituras";
-     ```
+```C++
+   const char* api_url = "http://10.183.253.145:5000/leituras";
+```
      
 ---
 
@@ -124,9 +125,9 @@ python api_robo.py
 ## Autores
 
 -[Gustavo Barreto](https://github.com/gustavo-gbarreto) - gustavo.barreto@ba.estudante.senai.br  
--[Guilherme Gradin](link do github) - email  
--[Juan Victor](link do github) - email  
--[Uriel Henrique Oliveira](https://github.com/UrielHRO) -email  
+-[Guilherme Gradin](https://github.com/gradinguilherme/gradinguilherme) - guilherme.c@aln.senaicimatec.edu.br  
+-[Juan Victor Vieira](https://github.com/juanvvieira) - juan.nascimento@aln.senaicimatec.edu.br  
+-[Uriel Henrique Oliveira](https://github.com/UrielHRO) -uriel.oliveira@ba.estudante.senai.br  
 
 
 
