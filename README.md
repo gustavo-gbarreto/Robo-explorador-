@@ -8,10 +8,11 @@ Este repositório contém o projeto de um Robô Explorador que calcula a probabi
 
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades Principais](#-funcionalidades-principais)
-- [Tecnologias e Componentes](#-tecnologias-e-componentes)
-- [Configuração do Ambiente](#-configuraçâo-do-ambiente)
+- [Tecnologias e Componentes](#-tecnologias-e-componentes) 
+- [Configuração do Ambiente](#-configuração-do-ambiente)
 - [Como Usar](#-como-usar)
 - [Autor](#-autor)
+- 
 
 ---
 
