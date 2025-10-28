@@ -42,15 +42,21 @@ Liste os principais componentes de hardware e software utilizados:
 
 ### Hardware
 * **Microcontrolador:** ESP32 
-* **Sensores:** Fotoresistor LDR / Sensor PIR/ DHT11 
-* **Atuadores:** 2x Motor DC 
-* **Driver de Motor:** [Ponte H L298N]
-* **Alimentação:** [Bateria 9V ou fonte de bancada]
+* **Sensores:**
+  -Fotoresistor LDR
+  -Sensor PIR
+  -DHT11 
+* **Atuadores:** 2x Motor DC 3-6V com Caixa de Redução e Eixo Duplo 
+* **Driver de Motor:** Ponte H L298N
+* **Sinalizadores:**
+  -1x LED PTH Vermelho
+  -1x LED PTH Verde 
+* **Alimentação:** Bateria 9V ou fonte de bancada
 
 ### Software
-* **Linguagem:** [Ex: C++ (Arduino) / MicroPython / Python]
-* **IDE/Editor:** [Ex: Arduino IDE / VS Code com PlatformIO]
-* **Bibliotecas Principais:** [Ex: `NewPing.h`, `AFMotor.h`, `Servo.h`]
+* **Linguagem:** C++ (Arduino) e Python
+* **IDE/Editor:** VS Code com PlatformIO
+* **Bibliotecas Principais:** WIFI.h, HTTPClient.h, UrlEncode.h, PubSubClient.h, DHT.h, ArduinoJson.h, time.h
 
 ---
 
