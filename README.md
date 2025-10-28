@@ -9,7 +9,7 @@ Este repositório contém o projeto de um Robô Explorador que calcula a probabi
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades Principais](#-funcionalidades-principais)
 - [Tecnologias e Componentes](#-tecnologias-e-componentes)
-- [Configuração do Ambiente](#-configuração-do-ambiente)
+- [Configuração do Ambiente](#-configuraçâo-do-ambiente)
 - [Como Usar](#-como-usar)
 - [Autor](#-autor)
 
@@ -38,7 +38,6 @@ Na camada de serviço, foi incluido o armazenamento dos dados lidos pelo robô e
 
 ## 🛠️ Tecnologias e Componentes
 
-Liste os principais componentes de hardware e software utilizados:
 
 ### Hardware
 * **Microcontrolador:** ESP32 
@@ -119,5 +118,4 @@ python api_robo.py
 
 
 
-#
 
