@@ -43,9 +43,9 @@ Liste os principais componentes de hardware e software utilizados:
 ### Hardware
 * **Microcontrolador:** ESP32 
 * **Sensores:**
-  [-Fotoresistor LDR]
-  [-Sensor PIR]
-  [-DHT11] 
+  [Fotoresistor LDR]
+  [Sensor PIR]
+  [DHT11] 
 * **Atuadores:** 2x Motor DC 3-6V com Caixa de Redução e Eixo Duplo 
 * **Driver de Motor:** Ponte H L298N
 * **Sinalizadores:**
