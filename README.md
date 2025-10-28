@@ -67,24 +67,33 @@ Instruções para configurar o projeto para desenvolvimento ou upload.
 1.  Faça o download e instale o VSCode(https://code.visualstudio.com/Download)).  
 2.  Clone este repositório:  
     ```bash
-    git clone [https://github.com/gustavo-gbarreto/Robo-explorador-.git](https://github.com/gustavo-gbarreto/Robo-explorador-.git)
+    git clone [https://github.com/gustavo-gbarreto/Robo-explorador-.git]
     ```
 3.  Abra o arquivo principal `main.cpp` no VSCode usando o PlatformIO.  
-4.  Instale as bibliotecas necessárias:  
- 
-
-
+4.  Instale as bibliotecas necessárias:
+5.  Altere as credenciais do Wifi para a sua rede:
+   ''' C++
+    const char* ssid = "rede_exemplo"; // Ou o nome da sua rede Wi-Fi
+    const char* password = "12345678";       // Senha da sua rede
+  ´´´ 
 ---
 
 ## ▶️ Como Usar
 
-[**Exemplo para projeto Arduino:**]
+#Gravando o firmware no seu microcontrolador  
 1.  Conecte o microcontrolador (ESP32) ao seu computador via USB.  
 2.  Configure a placa no seu projeto
 3.  Vá em **Tools > Port** e selecione a porta COM correspondente.
 4.  Clique no botão **Upload** (seta para a direita) para compilar e enviar o código para o robô.
 
-[**Exemplo para projeto Python (Simulação):**]
-Execute o script principal para iniciar a simulação:
+#Executando o script  
+1. Abra o terminal(Ctrl + Shift + ")
+2.  Execute o script principal para iniciar a simulação:
 ```bash
 python api_robo.py
+```
+
+
+
+#
+
